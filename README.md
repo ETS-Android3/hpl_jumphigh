@@ -1,8 +1,4 @@
-# ZAccelerometer
-This Accelerometer app shows data points (X,Y,Z axis) on a 2D plot.  App user would need to move a smart device (mobile phone) in x,y, or z directions
-to visualize the real time data.
+#HPL Jump High
 
-debug-apk is located under app/build/outputs/apk/debug/
-
-For a screenshot: https://github.com/zkhan1/ZAccelerometer-Android-app/issues/1
+This is a research app to use the accelerometer to measure jump characteristics ( height, velocity, time of propulsion, and peak acceleration) in order to detect patterns to predict premature injuries using machine learning techniques.
 
