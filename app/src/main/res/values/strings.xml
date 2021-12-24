@@ -1,0 +1,53 @@
+<resources>
+    <string name="instructions">
+        <![CDATA[
+        <h2> Instructions </h2>
+        <ol>
+            <li>Find a comfortable area to start vertical jumping</li>
+            <li>Push the "start" button when you are ready to start</li>
+            <li>Hold the phone with both hands with each hand gripping one of the long ends of the phone.
+            Press the phone firmly against stomach just below belly-button with palms pressing firmly against
+            the top edge of hip bones.
+            Make sure to hold the phone horizontally with the screen facing front
+            with the top of the phone pointing to the left.
+            Hold the phone securely in this position while performing the maximum effort vertical jump.
+
+ </li>
+            <li> <strong>Stand still for 5 seconds before jumping.</strong></li>
+            <li>Perform 5 maximum effort jumps. Start each jump from the standing position.
+             Bend the knees and hips and then explode upward to achieve your maximum jump height. After each jump, return to the standing posture, and repeat to yield 5 total jumps.</li>
+
+            <li>When done, push the "stop and save data" button at the bottom.
+               This leads you to a pop up of a file share window.
+               Click "Add to drive" to save the csv into your drive.  </li>
+    <li> Click the "results" button to see your information,
+        eg: Avg Jump height, Average Initial Velocity, and time of propulsion. </li>
+        </ol>
+        ]]>
+    </string>
+    <string name="app_name">HPL Jump</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="plotdescription"> Jump Start Instructions</string>
+    <string name="xaxis">X-axis</string>
+    <string name="yaxis">Y-axis</string>
+    <string name="zaxis">Z-axis</string>
+
+    <string name="results">
+        <![CDATA[
+        <h2>Jump Performance Results </h2>
+        <ol>
+            <li>Jump height: 0.25m</li>
+            <li>Peak acceleration: 9.81 m/s^2</li>
+            <li>Time of propulsion: 5 sec </li>
+        </ol>
+        ]]>
+    </string>
+</resources>
