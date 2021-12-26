@@ -5,7 +5,7 @@ This is a research app to use the accelerometer to measure jump characteristics 
 This is currently the first version, I am still working to add more features like time of propulsion and saving the data in the app. 
 
 <p align="center">
-    <img src="images/hpl_jump.jpg" alt="Screenshots"/>
+    <img src="hpl_jump.jpg" alt="Screenshots"/>
 </p>
 
 
