@@ -76,6 +76,10 @@ In order to run this project, you'll need to setup several things beforehand:
 
 
 
+## Todo
+1. Feasibility of having the app available on both Android and iPhone phones.
+2. Feasibility of making it available to anyone to download (free vs small fee).
+3. Feasibility of having the App keep track of a user’s jump metrics and graph results from multiple sessions.
 
 
 
