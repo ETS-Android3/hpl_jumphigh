@@ -26,6 +26,9 @@ This is currently the first version, I am still working to add more features lik
 * [Android SDK Tools](https://developer.android.com/studio#Other)
 
 
+
+
+
 ### Build & Run the application
 
 1. Get the source code.
@@ -82,11 +85,53 @@ In order to run this project, you'll need to setup several things beforehand:
 3. Feasibility of having the App keep track of a user’s jump metrics and graph results from multiple sessions.
 
 
+### The process of creating the app: 
+1. Started with the Zaccelerometer App found on Github, to install and learn more about accelerometer. 
+2. Create multiple pages - beginning page, capture, and save pages.
+3. Analyze acceleration graphs to determine jump beginnings and endings.
+4. Determine TFlight, sampling rate, jump height
+5. Make same for all sampling rates, adjusting thresholds of 
+6. Determine Peak acceleration 
+
+
+After some experimenting, the resultant acceleration worked better than just the X- acceleration.
+Formula for resultant acceleration:
+
+
+Accelerometer data when you drop the phone straight down:
+(insert pic here) 
+#### Calculating Sample Rate:
+sampling rate = number of samples/second Hz
+Average sampling rate is around 120 Hz for 84 seconds on my phone. Each sample includes all 3 axis data. To do this, I counted the total number of samples on spreadsheet
+and found the total time duration and divided them.
+#### Calculating TFlight
+When the acceleration is 9.81 m/s/s, the person is in the air. The acceleration should be changing before the person leaves the ground and after the person contacts the ground again. During the time between these two points is the time of flight also known as TFlight.
+The acceleration during flight should be 9.81 m/s/s different than the acceleration during quiet standing.
+Vi =  (9.81 m/s/s)*(Tflight/2) = 1.91m/s
+Height = (Vi*Tflight/2)-(1/2)*(9.81 m/s/s)*((Tflight/2)*(Tflight/2)) = 0.18m
+
+
+
+
+
+
+#### Calculating Peak Acceleration
+
+
+
+
+
+
+When you save and open the spreadsheet, there are 3 columns and a resultant acceleration: (insert ss of spreadsheet and graph here) 
+
+The resultant acceleration uses this formula: 
+
 
 
 
 
 
 ## Credits
-The HPL Jump app is an internal project based off of our [Android Boilerplate](https://github.com/ribot/android-boilerplate).
+The HPL Jump app is an internal project based off of our [ZAccelerometer](*find github link*).
 
+Special thanks to Professor Hawkins for guiding me through this project! 
