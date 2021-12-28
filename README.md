@@ -128,10 +128,13 @@ The resultant acceleration uses this formula:
 
 
 
-
+## Contributors:
+Vivian Zhu 
+Professor David Hawkins
 
 
 ## Credits
 The HPL Jump app is an internal project based off of our [ZAccelerometer](*find github link*).
 
-Special thanks to Professor Hawkins for guiding me through this project! 
+Special thanks to Professor David Hawkins for guiding me through this project! 
+
