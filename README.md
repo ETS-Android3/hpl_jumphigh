@@ -1,8 +1,8 @@
 # HPL Jump High
 
-This is a research app to use the accelerometer to measure jump characteristics ( height, velocity, time of propulsion, and peak acceleration) in order to detect patterns to predict premature injuries using machine learning techniques.
+This is a research app to use the android phone accelerometer to measure jump characteristics ( height, velocity, time of propulsion, and peak acceleration) in order to detect patterns to predict premature injuries using machine learning techniques.
 
-This is currently the first version, I am still working to add more features like time of propulsion and saving the data in the app. 
+This is currently the first version. I am still working to add more features like time of propulsion and saving the data in the app. 
 
 <p align="center">
     <img src="hpl_jump.jpg" alt="Screenshots"/>
@@ -19,6 +19,12 @@ This is currently the first version, I am still working to add more features lik
 7. Measure and calculate user's average and standard deviation of jump height, jumpcount, initial velocity, TFlight, peak acceleration, time of propulsion and others! 
 8. Tolerates users phone holding position inaccuracies.
 
+## Download
+
+APK is available to download here: https://github.com/vivianzhu2/hpl_jumphigh/blob/master/app/build/outputs/apk/debug/app-debug.apk
+Welcome to try the app to find out how high you can jump. Let me know if there is an issue using the Github issue reporing menu above. 
+Happy Jumping! 
+
 ### Setup development environment
 
 * [Android Studio](https://developer.android.com/studio)
@@ -26,7 +32,11 @@ This is currently the first version, I am still working to add more features lik
 * [Android SDK Tools](https://developer.android.com/studio#Other)
 
 
-
+## User Instructions
+User manual can be downloaded at: 
+<p align="center">
+    <img src="images/flows.jpg" alt="Screenshots"/>
+</p> 
 
 
 ### Build & Run the application
@@ -55,8 +65,7 @@ ln -s /path/to/jdk ${HOME}/android-java
 ```
 4. Open the project with Android Studio, let it build the project and hit Run.
 
-### APK Download
-If you want to try the app without building it, you can directly download it from: 
+
 
 ## Libraries
 
@@ -72,11 +81,6 @@ The libraries and tools used include:
 - Android SDK Tools
 - Android SDK Build tools 23.0.1
 - Android Support Repository
-
-## Build Instructions
-
-In order to run this project, you'll need to setup several things beforehand:
-
 
 
 ## Todo
@@ -100,36 +104,41 @@ Formula for resultant acceleration:
 
 Accelerometer data when you drop the phone straight down:
 (insert pic here) 
+
+
 #### Calculating Sample Rate:
 sampling rate = number of samples/second Hz
 Average sampling rate is around 120 Hz for 84 seconds on my phone. Each sample includes all 3 axis data. To do this, I counted the total number of samples on spreadsheet
 and found the total time duration and divided them.
+
+
 #### Calculating TFlight
 When the acceleration is 9.81 m/s/s, the person is in the air. The acceleration should be changing before the person leaves the ground and after the person contacts the ground again. During the time between these two points is the time of flight also known as TFlight.
 The acceleration during flight should be 9.81 m/s/s different than the acceleration during quiet standing.
 Vi =  (9.81 m/s/s)*(Tflight/2) = 1.91m/s
 Height = (Vi*Tflight/2)-(1/2)*(9.81 m/s/s)*((Tflight/2)*(Tflight/2)) = 0.18m
 
+Reference:
+https://www.researchgate.net/publication/221334626_Standing_Jump_Loft_Time_Measurement_-_An_Acceleration_based_Method
 
+<p align="center">
+    <img src="images/squat_jump.jpg" alt="Screenshots"/>
+</p> 
 
 
 
 
 #### Calculating Peak Acceleration
 
-
-
-
-
-
-When you save and open the spreadsheet, there are 3 columns and a resultant acceleration: (insert ss of spreadsheet and graph here) 
-
-The resultant acceleration uses this formula: 
+<p align="center">
+    <img src="images/Theight.jpg" alt="Screenshots"/>
+</p> 
 
 
 
 ## Contributors:
 Vivian Zhu 
+
 Professor David Hawkins
 
 
@@ -138,3 +147,40 @@ The HPL Jump app referenced the accelerometer capture example [ZAccelerometer](h
 
 Special thanks to Professor David Hawkins from UC Davis Human Performance Lab for guiding me through this project! 
 
+
+### Issues Fixed
+
+
+ 
+#### #1
+ 
+<p align="center">
+    <img src="images/1119_1.jpg" alt="Screenshots"/>
+</p> 
+
+ 
+#### #2
+<p align="center">
+    <img src="images/1119_2.jpg" alt="Screenshots"/>
+</p> 
+
+
+#### #3
+<p align="center">
+    <img src="images/1112_1.jpg" alt="Screenshots"/>
+</p> 
+
+
+#### #4
+<p align="center">
+    <img src="images/1112_2.jpg" alt="Screenshots"/>
+</p> 
+
+
+#### #5
+<p align="center">
+    <img src="images/1112_3.jpg" alt="Screenshots"/>
+</p> 
+
+ 
+ 
