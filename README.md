@@ -134,7 +134,7 @@ Professor David Hawkins
 
 
 ## Credits
-The HPL Jump app is an internal project based off of our [ZAccelerometer](*find github link*).
+The HPL Jump app referenced the accelerometer capture example [ZAccelerometer](https://github.com/zkhan1/ZAccelerometer-Android-app).
 
-Special thanks to Professor David Hawkins for guiding me through this project! 
+Special thanks to Professor David Hawkins from UC Davis Human Performance Lab for guiding me through this project! 
 
