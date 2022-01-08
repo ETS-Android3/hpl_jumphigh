@@ -155,31 +155,31 @@ Special thanks to Professor David Hawkins from UC Davis Human Performance Lab fo
 #### #1
  
 <p align="center">
-    <img src="app/images/1119_1.jpg" alt="Screenshots"/>
+    <img src="app/images/1119_1.jpg" alt="Screenshots" height="500"/>
 </p> 
 
  
 #### #2
 <p align="center">
-    <img src="app/images/1119_2.jpg" alt="Screenshots"/>
+    <img src="app/images/1119_2.jpg" alt="Screenshots" height="500"/>
 </p> 
 
 
 #### #3
 <p align="center">
-    <img src="app/images/1112_1.jpg" alt="Screenshots"/>
+    <img src="app/images/1112_1.jpg" alt="Screenshots" height="500"/>
 </p> 
 
 
 #### #4
 <p align="center">
-    <img src="app/images/1112_2.jpg" alt="Screenshots"/>
+    <img src="app/images/1112_2.jpg" alt="Screenshots" height="500"/>
 </p> 
 
 
 #### #5
 <p align="center">
-    <img src="app/images/1112_3.jpg" alt="Screenshots"/>
+    <img src="app/images/1112_3.jpg" alt="Screenshots" height="500"/>
 </p> 
 
  
