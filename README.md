@@ -1,6 +1,6 @@
 # HPL Jump High
 
-This is a research app to use the accelerometer to measure jump characteristics ( height, velocity, time of propulsion, and peak acceleration) in order to detect patterns to predict premature injuries using machine learning techniques.
+This is a research app to use the android phone accelerometer to measure jump characteristics ( height, velocity, time of propulsion, and peak acceleration) in order to detect patterns to predict premature injuries using machine learning techniques.
 
 This is currently the first version, I am still working to add more features like time of propulsion and saving the data in the app. 
 
@@ -18,6 +18,12 @@ This is currently the first version, I am still working to add more features lik
 6. Jump streak count to motivate users' exercise. (in progress)
 7. Measure and calculate user's average and standard deviation of jump height, jumpcount, initial velocity, TFlight, peak acceleration, time of propulsion and others! 
 8. Tolerates users phone holding position inaccuracies.
+
+## Download
+
+APK is available to download here: https://github.com/vivianzhu2/hpl_jumphigh/blob/master/app/build/outputs/apk/debug/app-debug.apk
+Welcome to try the app to find out how high you can jump. Let me know if there is an issue using the Github issue reporing menu above. 
+Happy Jumping! 
 
 ### Setup development environment
 
@@ -73,11 +79,6 @@ The libraries and tools used include:
 - Android SDK Build tools 23.0.1
 - Android Support Repository
 
-## Build Instructions
-
-In order to run this project, you'll need to setup several things beforehand:
-
-
 
 ## Todo
 1. Feasibility of having the app available on both Android and iPhone phones.
@@ -119,12 +120,9 @@ Height = (Vi*Tflight/2)-(1/2)*(9.81 m/s/s)*((Tflight/2)*(Tflight/2)) = 0.18m
 
 
 
-
-
-
 When you save and open the spreadsheet, there are 3 columns and a resultant acceleration: (insert ss of spreadsheet and graph here) 
 
-The resultant acceleration uses this formula: 
+
 
 
 
