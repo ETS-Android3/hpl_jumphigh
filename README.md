@@ -22,6 +22,8 @@ This is currently the first version. I am still working to add more features lik
 ## Download
 
 APK is available to download here: https://github.com/vivianzhu2/hpl_jumphigh/blob/master/app/build/outputs/apk/debug/app-debug.apk
+
+
 Welcome to try the app to find out how high you can jump. Let me know if there is an issue using the Github issue reporing menu above. 
 Happy Jumping! 
 
