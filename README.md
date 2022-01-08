@@ -2,7 +2,7 @@
 
 This is a research app to use the android phone accelerometer to measure jump characteristics ( height, velocity, time of propulsion, and peak acceleration) in order to detect patterns to predict premature injuries using machine learning techniques.
 
-This is currently the first version, I am still working to add more features like time of propulsion and saving the data in the app. 
+This is currently the first version. I am still working to add more features like time of propulsion and saving the data in the app. 
 
 <p align="center">
     <img src="hpl_jump.jpg" alt="Screenshots"/>
