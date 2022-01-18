@@ -22,6 +22,8 @@ This is currently the first version. I am still working to add more features lik
 ## Download
 
 APK is available to download here: https://github.com/vivianzhu2/hpl_jumphigh/blob/master/app/build/outputs/apk/debug/app-debug.apk
+
+
 Welcome to try the app to find out how high you can jump. Let me know if there is an issue using the Github issue reporing menu above. 
 Happy Jumping! 
 
@@ -33,9 +35,9 @@ Happy Jumping!
 
 
 ## User Instructions
-User manual can be downloaded at: 
+User manual can be downloaded at: https://github.com/vivianzhu2/hpl_jumphigh/blob/master/app/images/hpl%20jump%20instruction%20manual.docx
 <p align="center">
-    <img src="images/flows.jpg" alt="Screenshots"/>
+    <img src="app/images/jump_flow.png" alt="Screenshots" width="500"/>
 </p> 
 
 
@@ -99,11 +101,11 @@ The libraries and tools used include:
 
 
 After some experimenting, the resultant acceleration worked better than just the X- acceleration.
-Formula for resultant acceleration:
 
+<p align="center">
+    <img src="app/images/jumpapp.png" alt="Screenshots" width="500"/>
+</p> 
 
-Accelerometer data when you drop the phone straight down:
-(insert pic here) 
 
 
 #### Calculating Sample Rate:
@@ -122,7 +124,7 @@ Reference:
 https://www.researchgate.net/publication/221334626_Standing_Jump_Loft_Time_Measurement_-_An_Acceleration_based_Method
 
 <p align="center">
-    <img src="images/squat_jump.jpg" alt="Screenshots"/>
+    <img src="app/images/squat_jump.jpg" alt="Screenshots" width="500"/>
 </p> 
 
 
@@ -131,7 +133,7 @@ https://www.researchgate.net/publication/221334626_Standing_Jump_Loft_Time_Measu
 #### Calculating Peak Acceleration
 
 <p align="center">
-    <img src="images/Theight.jpg" alt="Screenshots"/>
+    <img src="app/images/Theight.jpg" alt="Screenshots" width="500"/>
 </p> 
 
 
@@ -155,31 +157,31 @@ Special thanks to Professor David Hawkins from UC Davis Human Performance Lab fo
 #### #1
  
 <p align="center">
-    <img src="images/1119_1.jpg" alt="Screenshots"/>
+    <img src="app/images/1119_1.jpg" alt="Screenshots" height="200"/>
 </p> 
 
  
 #### #2
 <p align="center">
-    <img src="images/1119_2.jpg" alt="Screenshots"/>
+    <img src="app/images/1119_2.jpg" alt="Screenshots" height="200"/>
 </p> 
 
 
 #### #3
 <p align="center">
-    <img src="images/1112_1.jpg" alt="Screenshots"/>
+    <img src="app/images/1112_1.jpg" alt="Screenshots" height="200"/>
 </p> 
 
 
 #### #4
 <p align="center">
-    <img src="images/1112_2.jpg" alt="Screenshots"/>
+    <img src="app/images/1112_2.jpg" alt="Screenshots" height="200"/>
 </p> 
 
 
 #### #5
 <p align="center">
-    <img src="images/1112_3.jpg" alt="Screenshots"/>
+    <img src="app/images/1112_3.jpg" alt="Screenshots" height="200"/>
 </p> 
 
  
