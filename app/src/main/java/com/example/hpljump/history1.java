@@ -1,20 +1,28 @@
 package com.example.hpljump;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.os.Build;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
 
-public class results extends AppCompatActivity {
-    TextView results1;
+import java.util.ArrayList;
+
+public class history1 extends AppCompatActivity {
+    //TextView results1;
     private String currentDateandTime;
     private static final String TAG = "results";
     private String data;
@@ -29,14 +37,106 @@ public class results extends AppCompatActivity {
     private double summintakeoff;
     private double minpeak;
     private int jumpcount;
-    Button historybutton;
+    private Button historybutton;
     Button exitbutton;
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
+    // variable for our bar chart
+    BarChart barChart;
+
+    // variable for our bar data set.
+    BarDataSet barDataSet1, barDataSet2;
+
+    // array list for storing entries.
+    ArrayList barEntries;
+
+    // creating a string array for displaying days.
+    String[] days = new String[]{"1/16/22 13:46", "1/16/22 13:51", "1/16/22 13:52", "1/16/22 13:53", "1/16/22 13:55", "1/16/22 13:57"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setContentView(R.layout.activity_results);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setContentView(R.layout.activity_history);
+
+        // initializing variable for bar chart.
+        barChart = findViewById(R.id.chart);
+
+        // creating a new bar data set.
+        barDataSet1 = new BarDataSet(getBarEntriesOne(), "Average Jump Height (m)");
+        barDataSet1.setColor(getApplicationContext().getResources().getColor(R.color.colorPrimary));
+        barDataSet2 = new BarDataSet(getBarEntriesTwo(), "Jump height Standard Deviation (m)");
+        barDataSet2.setColor(Color.BLUE);
+
+        // below line is to add bar data set to our bar data.
+        BarData data = new BarData(barDataSet1, barDataSet2);
+
+        // after adding data to our bar data we
+        // are setting that data to our bar chart.
+        barChart.setData(data);
+
+        // below line is to remove description
+        // label of our bar chart.
+        barChart.getDescription().setEnabled(false);
+
+        // below line is to get x axis
+        // of our bar chart.
+        XAxis xAxis = barChart.getXAxis();
+
+        // below line is to set value formatter to our x-axis and
+        // we are adding our days to our x axis.
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(days));
+
+        // below line is to set center axis
+        // labels to our bar chart.
+        xAxis.setCenterAxisLabels(true);
+
+        // below line is to set position
+        // to our x-axis to bottom.
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+
+        // below line is to set granularity
+        // to our x axis labels.
+        xAxis.setGranularity(1);
+
+        // below line is to enable
+        // granularity to our x axis.
+        xAxis.setGranularityEnabled(true);
+        // below line is to make our
+        // bar chart as draggable.
+        barChart.setDragEnabled(true);
+
+        // below line is to make visible
+        // range for our bar chart.
+        barChart.setVisibleXRangeMaximum(3);
+
+        // below line is to add bar
+        // space to our chart.
+        float barSpace = 0.1f;
+
+        // below line is use to add group
+        // spacing to our bar chart.
+        float groupSpace = 0.5f;
+
+        // we are setting width of
+        // bar in below line.
+        data.setBarWidth(0.15f);
+
+        // below line is to set minimum
+        // axis to our chart.
+        barChart.getXAxis().setAxisMinimum(0);
+
+        // below line is to
+        // animate our chart.
+        barChart.animate();
+
+        // below line is to group bars
+        // and add spacing to it.
+        barChart.groupBars(0, groupSpace, barSpace);
+
+        // below line is to invalidate
+        // our bar chart.
+        barChart.invalidate();
+
 
         exitbutton = (Button)findViewById(R.id.exitbutton);
         exitbutton.setOnClickListener(new View.OnClickListener() {
@@ -57,46 +157,6 @@ public class results extends AppCompatActivity {
 
         });
 
-        historybutton = (Button) findViewById(R.id.historybutton);
-        //historybutton.setAlpha(.5f);
-        //historybutton.setEnabled(false);
-
-
-        historybutton.setOnClickListener(new View.OnClickListener() {
-
-                public void onClick(View v)
-                {
-//                SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd ',' HH:mm:ss ");
-//                String currentDateandTime = sdf.format(new Date());
-                    // Intents are objects of the android.content.Intent type. Your code can send them
-                    // to the Android system defining the components you are targeting.
-                    // Intent to start an activity called SecondActivity with the following code:
-                    // Log.d(TAG, "Results button Clicked. ");
-                    Intent intent = new Intent(results.this, history1.class);
-                    //Sending data to next activity using putExtra method
-                    //    intent.putExtra("DATETIME", currentDateandTime);
-                    // start the activity connect to the specified class
-                    // intent.putExtra("ACCDATA", data.toString());
-                    //intent.putExtra("DATETIME", currentDateandTime);
-
-//                    intent.putExtra("jumpcount", jumpcount);
-//                    intent.putExtra("avg_tflight", avg_tflight);
-//                    intent.putExtra("stdev_tflight", stdev_tflight);
-//                    intent.putExtra("avg_sampling_rate", avg_sampling_rate);
-//                    intent.putExtra("takoff_thr", takoff_thr);
-//                    intent.putExtra("landing_thr", landing_thr);
-//                    intent.putExtra("avg_height", avg_height);
-//                    intent.putExtra("stdev_height", stdev_height);
-//                    intent.putExtra("avg_vi", avg_vi);
-//                    intent.putExtra("summintakeoff", summintakeoff);
-//                    intent.putExtra("minpeak", minpeak);
-                    startActivity(intent);
-
-                }
-
-
-
-        });
 
         //Log.d(TAG, "Result screen is shown. ");
       Bundle bunble=getIntent().getExtras();
@@ -142,11 +202,46 @@ public class results extends AppCompatActivity {
         // by ID we can use each component which id is assign in xml file
         // use findViewById() to get the Button
 //        start_button = (Button)findViewById(R.id.start);
-        results1 = (TextView)findViewById(R.id.resultstext);
-        results1.setText(htmlAsSpanned);
+        //results1 = (TextView)findViewById(R.id.resultstext);
+        //results1.setText(htmlAsSpanned);
 
 
     }
+
+    // array list for first set
+    private ArrayList<BarEntry> getBarEntriesOne() {
+
+        // creating a new array list
+        barEntries = new ArrayList<>();
+
+        // adding new entry to our array list with bar
+        // entry and passing x and y axis value to it.
+        barEntries.add(new BarEntry(1f, 0.17f));
+        barEntries.add(new BarEntry(2f, 0.15f));
+        barEntries.add(new BarEntry(3f, 0.18f));
+        barEntries.add(new BarEntry(4f, 0.14f));
+        barEntries.add(new BarEntry(5f, 0.15f));
+        barEntries.add(new BarEntry(6f, 0.13f));
+        return barEntries;
+    }
+
+    // array list for second set.
+    private ArrayList<BarEntry> getBarEntriesTwo() {
+
+        // creating a new array list
+        barEntries = new ArrayList<>();
+
+        // adding new entry to our array list with bar
+        // entry and passing x and y axis value to it.
+        barEntries.add(new BarEntry(1f, 0.04f));
+        barEntries.add(new BarEntry(2f, 0.04f));
+        barEntries.add(new BarEntry(3f, 0.03f));
+        barEntries.add(new BarEntry(4f, 0.05f));
+        barEntries.add(new BarEntry(5f, 0.02f));
+        barEntries.add(new BarEntry(6f, 0.03f));
+        return barEntries;
+    }
+
 /*
     public void savedata(View view){
 

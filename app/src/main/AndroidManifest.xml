@@ -25,6 +25,7 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".results"></activity>
+        <activity android:name=".history1"></activity>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
