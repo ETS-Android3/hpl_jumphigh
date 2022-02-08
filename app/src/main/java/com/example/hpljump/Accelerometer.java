@@ -188,7 +188,7 @@ public class Accelerometer extends AppCompatActivity implements SensorEventListe
             //    intent.putExtra("DATETIME", currentDateandTime);
                 // start the activity connect to the specified class
                // intent.putExtra("ACCDATA", data.toString());
-                //intent.putExtra("DATETIME", currentDateandTime);
+                intent.putExtra("DATETIME", currentDateandTime);
 
                 intent.putExtra("jumpcount", jumpcount);
                 intent.putExtra("avg_tflight", avg_tflight);
@@ -481,6 +481,7 @@ public class Accelerometer extends AppCompatActivity implements SensorEventListe
             Datetitle =Datetitle.replaceAll(                    "[^a-zA-Z0-9]", "");
             Timetitle =Timetitle.replaceAll(                    "[^a-zA-Z0-9]", "");
             String filename = "JumpAcceleratorProfile-ID-"+Datetitle + '-' + Timetitle + ".csv";
+            //String historyfilename = "JumpAccelerator-History-ID.csv";
             //String afilename;
             //afilename=filename.replaceAll("[]:","").replaceAll("\.","").replaceAll("\ ","");
 //            filename=filename.replaceAll(".","");
