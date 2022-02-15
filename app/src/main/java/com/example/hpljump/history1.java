@@ -1,11 +1,15 @@
   package com.example.hpljump;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.FileProvider;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.Html;
@@ -569,6 +573,116 @@ import java.util.List;
 //        startActivity(intent);
 
     }
+
+
+
+
+      public void savehistory(View view){
+
+          try{
+              //saving the file into device
+              Context context = getApplicationContext();
+              StringBuilder save_history = new StringBuilder();
+              String historyfilename = "JumpAccelerator-History-ID.csv";
+              //String root = Environment.getExternalStorageDirectory().toString();
+              //File tmpDir1 = new File(root + "/hpl_saved_history");
+              //if (!tmpDir1.exists()) {
+              //    tmpDir1.mkdirs();
+              //}
+              //File tmpDir = new File(tmpDir1, historyfilename);
+              File tmpDir = new File(context.getFilesDir(), historyfilename);
+
+              boolean exists = tmpDir.exists();
+
+
+              String line= null;
+              if(exists) {
+
+                  FileInputStream fileInputStream = new FileInputStream(tmpDir);
+                  InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+                  BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+
+                  boolean badline = false;
+                  StringBuilder sb = new StringBuilder();
+                  int line_i=0;
+                  int h_i=0;
+                  String[] lastvalues=null;//= last_line.split(",");
+                  while ((line = bufferedReader.readLine()) != null) {
+
+                          save_history.append(line);
+                          save_history.append("\n");
+                  }
+
+                  fileInputStream.close();
+
+                  String filename = "JumpAcceleratorProfile-ID-History.csv";
+                  //String historyfilename = "JumpAccelerator-History-ID.csv";
+                  //String afilename;
+                  //afilename=filename.replaceAll("[]:","").replaceAll("\.","").replaceAll("\ ","");
+    //            filename=filename.replaceAll(".","");
+    //            filename=filename.replaceAll(" ","");
+                  //  Log.d(TAG,Datetitle);
+                  //  Log.d(TAG,Timetitle);
+                  // Log.d(TAG,filename);
+                  FileOutputStream out = openFileOutput(filename, Context.MODE_PRIVATE);
+                  out.write((save_history.toString()).getBytes());
+                  out.close();
+
+                  //exporting
+                  //Context context = getApplicationContext();
+                  File filelocation = new File(getFilesDir(), filename);
+                  Intent fileIntent = new Intent(Intent.ACTION_SEND);
+                  if (filelocation.exists()) {
+                      Uri path = FileProvider.getUriForFile(context, "com.example.hpljump.fileprovider", filelocation);
+                      fileIntent.setType("text/csv");
+                      fileIntent.putExtra(Intent.EXTRA_SUBJECT, filename);
+                      //fileIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                      fileIntent.putExtra(Intent.EXTRA_STREAM, path);
+                      Intent chooser = Intent.createChooser(fileIntent, "Send mail");
+
+                      List<ResolveInfo> resInfoList = this.getPackageManager().queryIntentActivities(chooser, PackageManager.MATCH_DEFAULT_ONLY);
+
+                      for (ResolveInfo resolveInfo : resInfoList) {
+                          String packageName = resolveInfo.activityInfo.packageName;
+                          this.grantUriPermission(packageName, path, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                      }
+
+                      startActivity(chooser);
+                      //startActivity(Intent.createChooser(fileIntent, "Send mail"));
+                  }
+              }
+          }
+          catch(Exception e){
+              e.printStackTrace();
+          }
+
+//        stopData=true;
+//        plotData=false;
+//        // Intents are objects of the android.content.Intent type. Your code can send them
+//        // to the Android system defining the components you are targeting.
+//        // Intent to start an activity called SecondActivity with the following code:
+//        Log.d(TAG, "Results button Clicked. ");
+//        Intent intent = new Intent(Accelerometer.this, results.class);
+//        //Sending data to next activity using putExtra method
+//        //    intent.putExtra("DATETIME", currentDateandTime);
+//        // start the activity connect to the specified class
+//        // intent.putExtra("ACCDATA", data.toString());
+//        //intent.putExtra("DATETIME", currentDateandTime);
+//
+//        intent.putExtra("jumpcount", jumpcount);
+//        intent.putExtra("avg_tflight", avg_tflight);
+//        intent.putExtra("stdev_tflight", stdev_tflight);
+//        intent.putExtra("avg_sampling_rate", avg_sampling_rate);
+//        intent.putExtra("takoff_thr", takoff_thr);
+//        intent.putExtra("landing_thr", landing_thr);
+//        intent.putExtra("avg_height", avg_height);
+//        intent.putExtra("stdev_height", stdev_height);
+//        intent.putExtra("avg_vi", avg_vi);
+//        startActivity(intent);
+
+      }
+
 /*
     public void savedata(View view){
 
